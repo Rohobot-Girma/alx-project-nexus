@@ -1,0 +1,4 @@
+WARNING 2025-10-01 09:16:02,950 log 28116 3736 Bad Request: /api/users/logout/
+WARNING 2025-10-01 09:16:04,231 log 28116 3736 Bad Request: /api/users/login/
+WARNING 2025-10-01 09:16:06,064 log 28116 3736 Bad Request: /api/users/register/
+WARNING 2025-10-01 09:16:06,067 log 28116 3736 Bad Request: /api/users/register/
