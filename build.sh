@@ -13,10 +13,12 @@ if [ -n "$DATABASE_URL" ]; then
     echo "PostgreSQL database detected - applying migrations"
     echo "=== Applying database migrations ==="
     python manage.py migrate
+    echo "=== Creating default superuser if not exists ==="
+    echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('admin@example.com', 'adminpassword') if not User.objects.filter(email='admin@example.com').exists() else None" | python manage.py shell
 else
-    echo "No DATABASE_URL set - using SQLite (development mode)"
-    echo "=== Skipping migrations for SQLite (Python 3.13 compatibility) ==="
-    # Skip migrations to avoid SQLite compatibility issues with Python 3.13
+    echo "No DATABASE_URL set - using SQLite for local development"
+    echo "=== Applying database migrations ==="
+    python manage.py migrate
 fi
 
 echo "=== Collecting static files ==="
