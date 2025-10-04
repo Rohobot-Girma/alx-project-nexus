@@ -32,7 +32,7 @@ packaging==25.0
 Pillow>=10.3.0
 pluggy==1.6.0
 prompt_toolkit==3.0.52
-psycopg[binary]==3.1.18
+psycopg[binary]>=3.2.2
 PyJWT==2.10.1
 pytest==7.4.3
 pytest-django==4.7.0

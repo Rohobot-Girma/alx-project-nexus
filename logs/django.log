@@ -116,3 +116,12 @@ INFO 2025-10-04 16:49:36,483 basehttp 21836 6236 "GET /api/movies/27205/ HTTP/1.
 INFO 2025-10-04 17:16:09,438 autoreload 21836 25712 C:\Users\QWEWRETTRTYYTYUTOIUY\alx-project-nexus\movie_recommendation\settings.py changed, reloading.
 INFO 2025-10-04 17:16:12,565 autoreload 33680 5736 Watching for file changes with StatReloader
 INFO 2025-10-04 17:17:32,977 autoreload 33680 5736 C:\Users\QWEWRETTRTYYTYUTOIUY\alx-project-nexus\movie_recommendation\settings.py changed, reloading.
+INFO 2025-10-04 19:33:54,100 autoreload 31568 33392 Watching for file changes with StatReloader
+INFO 2025-10-04 19:34:18,851 autoreload 24504 10944 Watching for file changes with StatReloader
+INFO 2025-10-04 20:03:15,427 autoreload 18396 34500 Watching for file changes with StatReloader
+INFO 2025-10-04 20:04:12,693 basehttp 18396 19632 "GET /api/movies/27205/ HTTP/1.1" 200 1136
+INFO 2025-10-04 20:06:24,958 autoreload 19420 26944 Watching for file changes with StatReloader
+INFO 2025-10-04 20:08:35,720 autoreload 32840 2900 Watching for file changes with StatReloader
+WARNING 2025-10-04 20:12:02,205 basehttp 32840 6088 "POST /api/users/login/ HTTP/1.1" 400 51
+INFO 2025-10-04 20:12:53,699 basehttp 32840 6088 "POST /api/users/login/ HTTP/1.1" 200 811
+INFO 2025-10-04 20:15:28,778 autoreload 17636 33940 Watching for file changes with StatReloader
