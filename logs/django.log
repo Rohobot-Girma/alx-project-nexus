@@ -112,3 +112,7 @@ INFO 2025-10-04 16:43:18,723 autoreload 28308 32588 Watching for file changes wi
 INFO 2025-10-04 16:45:55,940 autoreload 28308 32588 C:\Users\QWEWRETTRTYYTYUTOIUY\alx-project-nexus\movies\serializers.py changed, reloading.
 INFO 2025-10-04 16:45:56,969 autoreload 12696 30788 Watching for file changes with StatReloader
 INFO 2025-10-04 16:48:29,621 autoreload 21836 25712 Watching for file changes with StatReloader
+INFO 2025-10-04 16:49:36,483 basehttp 21836 6236 "GET /api/movies/27205/ HTTP/1.1" 200 1136
+INFO 2025-10-04 17:16:09,438 autoreload 21836 25712 C:\Users\QWEWRETTRTYYTYUTOIUY\alx-project-nexus\movie_recommendation\settings.py changed, reloading.
+INFO 2025-10-04 17:16:12,565 autoreload 33680 5736 Watching for file changes with StatReloader
+INFO 2025-10-04 17:17:32,977 autoreload 33680 5736 C:\Users\QWEWRETTRTYYTYUTOIUY\alx-project-nexus\movie_recommendation\settings.py changed, reloading.
