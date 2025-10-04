@@ -2,3 +2,113 @@ WARNING 2025-10-01 09:16:02,950 log 28116 3736 Bad Request: /api/users/logout/
 WARNING 2025-10-01 09:16:04,231 log 28116 3736 Bad Request: /api/users/login/
 WARNING 2025-10-01 09:16:06,064 log 28116 3736 Bad Request: /api/users/register/
 WARNING 2025-10-01 09:16:06,067 log 28116 3736 Bad Request: /api/users/register/
+INFO 2025-10-03 21:50:46,196 autoreload 39212 16104 Watching for file changes with StatReloader
+INFO 2025-10-04 12:14:04,161 autoreload 39212 16104 C:\Users\QWEWRETTRTYYTYUTOIUY\alx-project-nexus\movies\views.py changed, reloading.
+INFO 2025-10-04 12:14:06,253 autoreload 4908 44736 Watching for file changes with StatReloader
+INFO 2025-10-04 12:20:07,248 autoreload 2772 40996 Watching for file changes with StatReloader
+WARNING 2025-10-04 12:20:58,994 log 2772 12072 Not Found: /api/
+WARNING 2025-10-04 12:20:59,023 basehttp 2772 12072 "GET /api/ HTTP/1.1" 404 3453
+WARNING 2025-10-04 12:21:01,027 log 2772 12072 Not Found: /favicon.ico
+WARNING 2025-10-04 12:21:01,034 basehttp 2772 12072 "GET /favicon.ico HTTP/1.1" 404 3482
+INFO 2025-10-04 12:21:14,701 basehttp 2772 12072 "GET /api/docs/ HTTP/1.1" 200 1615
+INFO 2025-10-04 12:21:15,410 basehttp 2772 34464 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2025-10-04 12:21:15,428 basehttp 2772 12072 "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2025-10-04 12:21:15,528 basehttp 2772 34464 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 14964
+INFO 2025-10-04 12:21:15,566 basehttp 2772 47044 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2025-10-04 12:21:15,642 basehttp 2772 13836 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2025-10-04 12:21:15,652 basehttp 2772 17456 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2025-10-04 12:21:15,831 basehttp 2772 22696 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2025-10-04 12:21:16,744 basehttp 2772 17456 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2025-10-04 12:21:16,803 basehttp 2772 22696 "GET /api/docs/?format=openapi HTTP/1.1" 200 16718
+WARNING 2025-10-04 12:36:10,440 log 2772 9064 Bad Request: /api/users/register/
+WARNING 2025-10-04 12:36:10,446 basehttp 2772 9064 "POST /api/users/register/ HTTP/1.1" 400 83
+INFO 2025-10-04 12:43:45,668 basehttp 2772 8016 "GET /api/movies/27205/ HTTP/1.1" 200 38
+INFO 2025-10-04 12:48:16,935 autoreload 23672 27712 Watching for file changes with StatReloader
+INFO 2025-10-04 12:49:02,860 autoreload 35092 10968 Watching for file changes with StatReloader
+INFO 2025-10-04 12:49:11,576 basehttp 35092 48504 "GET /api/docs/ HTTP/1.1" 200 1615
+INFO 2025-10-04 12:49:13,090 basehttp 35092 48504 "GET /api/docs/?format=openapi HTTP/1.1" 200 16812
+INFO 2025-10-04 12:49:40,090 basehttp 35092 48504 "GET /api/movies/27205/ HTTP/1.1" 200 38
+INFO 2025-10-04 12:55:51,428 autoreload 35092 10968 C:\Users\QWEWRETTRTYYTYUTOIUY\alx-project-nexus\movies\views.py changed, reloading.
+INFO 2025-10-04 12:55:52,803 autoreload 47632 37256 Watching for file changes with StatReloader
+INFO 2025-10-04 12:56:05,625 basehttp 47632 24908 "GET /api/docs/ HTTP/1.1" 200 1615
+INFO 2025-10-04 12:56:06,930 basehttp 47632 24908 "GET /api/docs/?format=openapi HTTP/1.1" 200 20628
+ERROR 2025-10-04 12:57:18,498 views 47632 24908 Error fetching movie details for ID 27205: TMDBService.get_movie_details() got an unexpected keyword argument 'append_to_response'
+ERROR 2025-10-04 12:57:18,501 log 47632 24908 Internal Server Error: /api/movies/27205/
+ERROR 2025-10-04 12:57:18,503 basehttp 47632 24908 "GET /api/movies/27205/ HTTP/1.1" 500 41
+INFO 2025-10-04 15:40:29,007 autoreload 25912 19736 Watching for file changes with StatReloader
+WARNING 2025-10-04 15:40:48,808 basehttp 25912 32492 "GET / HTTP/1.1" 404 3228
+WARNING 2025-10-04 15:40:49,929 basehttp 25912 32492 "GET /favicon.ico HTTP/1.1" 404 3279
+INFO 2025-10-04 15:41:18,735 basehttp 25912 32492 "GET /api/docs/ HTTP/1.1" 200 1615
+INFO 2025-10-04 15:41:20,143 basehttp 25912 12064 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2025-10-04 15:41:20,417 basehttp 25912 23444 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2025-10-04 15:41:20,428 basehttp 25912 12064 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 14964
+INFO 2025-10-04 15:41:20,590 basehttp 25912 33700 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2025-10-04 15:41:20,643 basehttp 25912 5752 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2025-10-04 15:41:20,694 basehttp 25912 32492 "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2025-10-04 15:41:21,143 basehttp 25912 13468 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2025-10-04 15:41:21,993 basehttp 25912 32492 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2025-10-04 15:41:38,403 basehttp 25912 13468 "GET /api/docs/?format=openapi HTTP/1.1" 200 23164
+ERROR 2025-10-04 15:45:49,119 log 25912 13468 Internal Server Error: /api/movies/27205/
+ERROR 2025-10-04 15:45:49,120 basehttp 25912 13468 "GET /api/movies/27205/?append_to_response=credits HTTP/1.1" 500 41
+ERROR 2025-10-04 15:46:38,957 log 25912 13468 Internal Server Error: /api/movies/27205/
+ERROR 2025-10-04 15:46:38,961 basehttp 25912 13468 "GET /api/movies/27205/ HTTP/1.1" 500 41
+INFO 2025-10-04 16:13:54,764 autoreload 32164 5800 Watching for file changes with StatReloader
+INFO 2025-10-04 16:14:20,523 basehttp 32164 29868 "GET /api/docs/ HTTP/1.1" 200 1615
+INFO 2025-10-04 16:14:20,579 basehttp 32164 5448 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2025-10-04 16:14:20,579 basehttp 32164 29868 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2025-10-04 16:14:20,583 basehttp 32164 5448 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2025-10-04 16:14:20,596 basehttp 32164 30912 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2025-10-04 16:14:20,596 basehttp 32164 29244 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2025-10-04 16:14:20,597 basehttp 32164 2552 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2025-10-04 16:14:20,777 basehttp 32164 16056 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2025-10-04 16:14:21,699 basehttp 32164 2552 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2025-10-04 16:14:38,096 basehttp 32164 16056 "GET /api/docs/?format=openapi HTTP/1.1" 200 23164
+ERROR 2025-10-04 16:16:05,173 log 32164 16056 Internal Server Error: /api/movies/27205/
+ERROR 2025-10-04 16:16:05,173 basehttp 32164 16056 "GET /api/movies/27205/ HTTP/1.1" 500 130
+INFO 2025-10-04 16:29:29,764 autoreload 32716 21196 Watching for file changes with StatReloader
+INFO 2025-10-04 16:29:55,553 basehttp 32716 28552 "GET /api/docs/ HTTP/1.1" 200 1615
+INFO 2025-10-04 16:29:55,615 basehttp 32716 28552 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2025-10-04 16:29:55,620 basehttp 32716 31924 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2025-10-04 16:29:55,625 basehttp 32716 28552 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2025-10-04 16:29:55,627 basehttp 32716 31924 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2025-10-04 16:29:55,640 basehttp 32716 33204 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2025-10-04 16:29:55,641 basehttp 32716 10944 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2025-10-04 16:29:55,641 basehttp 32716 17728 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2025-10-04 16:29:56,604 basehttp 32716 10944 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2025-10-04 16:30:12,913 basehttp 32716 17728 "GET /api/docs/?format=openapi HTTP/1.1" 200 23164
+ERROR 2025-10-04 16:31:08,413 log 32716 17728 Internal Server Error: /api/movies/27205/
+ERROR 2025-10-04 16:31:08,415 basehttp 32716 17728 "GET /api/movies/27205/ HTTP/1.1" 500 323
+INFO 2025-10-04 16:37:19,459 autoreload 32716 21196 C:\Users\QWEWRETTRTYYTYUTOIUY\alx-project-nexus\movies\serializers.py changed, reloading.
+INFO 2025-10-04 16:37:20,613 autoreload 25320 10420 Watching for file changes with StatReloader
+INFO 2025-10-04 16:37:56,323 autoreload 25320 10420 C:\Users\QWEWRETTRTYYTYUTOIUY\alx-project-nexus\movies\serializers.py changed, reloading.
+INFO 2025-10-04 16:37:57,452 autoreload 9976 19136 Watching for file changes with StatReloader
+INFO 2025-10-04 16:38:01,148 autoreload 9976 19136 C:\Users\QWEWRETTRTYYTYUTOIUY\alx-project-nexus\movies\serializers.py changed, reloading.
+INFO 2025-10-04 16:38:02,547 autoreload 22332 32944 Watching for file changes with StatReloader
+INFO 2025-10-04 16:38:18,434 autoreload 22332 32944 C:\Users\QWEWRETTRTYYTYUTOIUY\alx-project-nexus\movies\serializers.py changed, reloading.
+INFO 2025-10-04 16:38:19,921 autoreload 29856 25516 Watching for file changes with StatReloader
+INFO 2025-10-04 16:38:22,929 autoreload 29856 25516 C:\Users\QWEWRETTRTYYTYUTOIUY\alx-project-nexus\movies\serializers.py changed, reloading.
+INFO 2025-10-04 16:38:23,942 autoreload 22704 27152 Watching for file changes with StatReloader
+INFO 2025-10-04 16:38:28,638 autoreload 22704 27152 C:\Users\QWEWRETTRTYYTYUTOIUY\alx-project-nexus\movies\serializers.py changed, reloading.
+INFO 2025-10-04 16:38:29,538 autoreload 9444 29916 Watching for file changes with StatReloader
+INFO 2025-10-04 16:39:04,701 autoreload 10660 19524 Watching for file changes with StatReloader
+INFO 2025-10-04 16:39:29,093 basehttp 10660 3308 "GET /api/docs/ HTTP/1.1" 200 1615
+INFO 2025-10-04 16:39:29,151 basehttp 10660 3308 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2025-10-04 16:39:29,152 basehttp 10660 12028 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2025-10-04 16:39:29,156 basehttp 10660 12028 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2025-10-04 16:39:29,159 basehttp 10660 5320 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2025-10-04 16:39:29,160 basehttp 10660 24596 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2025-10-04 16:39:29,167 basehttp 10660 31500 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2025-10-04 16:39:29,167 basehttp 10660 24380 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2025-10-04 16:39:30,257 basehttp 10660 31500 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2025-10-04 16:39:46,558 basehttp 10660 24380 "GET /api/docs/?format=openapi HTTP/1.1" 200 22794
+ERROR 2025-10-04 16:40:38,493 log 10660 24380 Internal Server Error: /api/movies/27205/
+ERROR 2025-10-04 16:40:38,493 basehttp 10660 24380 "GET /api/movies/27205/ HTTP/1.1" 500 103
+INFO 2025-10-04 16:43:05,883 autoreload 10660 19524 C:\Users\QWEWRETTRTYYTYUTOIUY\alx-project-nexus\movies\serializers.py changed, reloading.
+INFO 2025-10-04 16:43:06,811 autoreload 20432 12920 Watching for file changes with StatReloader
+INFO 2025-10-04 16:43:11,566 autoreload 20432 12920 C:\Users\QWEWRETTRTYYTYUTOIUY\alx-project-nexus\movies\serializers.py changed, reloading.
+INFO 2025-10-04 16:43:12,739 autoreload 11672 26092 Watching for file changes with StatReloader
+INFO 2025-10-04 16:43:17,732 autoreload 11672 26092 C:\Users\QWEWRETTRTYYTYUTOIUY\alx-project-nexus\movies\serializers.py changed, reloading.
+INFO 2025-10-04 16:43:18,723 autoreload 28308 32588 Watching for file changes with StatReloader
+INFO 2025-10-04 16:45:55,940 autoreload 28308 32588 C:\Users\QWEWRETTRTYYTYUTOIUY\alx-project-nexus\movies\serializers.py changed, reloading.
+INFO 2025-10-04 16:45:56,969 autoreload 12696 30788 Watching for file changes with StatReloader
+INFO 2025-10-04 16:48:29,621 autoreload 21836 25712 Watching for file changes with StatReloader

@@ -18,7 +18,7 @@ class MovieSerializer(serializers.ModelSerializer):
     """
     Serializer for Movie model.
     """
-    genres = GenreSerializer(source='genre_ids', many=True, read_only=True)
+    genres = serializers.SerializerMethodField(read_only=True)
     release_year = serializers.ReadOnlyField()
     full_poster_url = serializers.ReadOnlyField()
     full_backdrop_url = serializers.ReadOnlyField()
@@ -34,6 +34,21 @@ class MovieSerializer(serializers.ModelSerializer):
         ]
         read_only_fields = ['id', 'created_at', 'updated_at']
 
+    # ADD THIS METHOD - IT'S MISSING!
+    def get_genres(self, obj):
+        """Get actual Genre objects instead of just IDs."""
+        # Get genre IDs from the JSON field
+        genre_ids = obj.genre_ids
+        
+        if not genre_ids:
+            return []
+        
+        # Fetch the actual Genre objects
+        from .models import Genre
+        genres = Genre.objects.filter(tmdb_id__in=genre_ids)
+        
+        # Serialize them
+        return GenreSerializer(genres, many=True).data
 
 class MovieListSerializer(serializers.ModelSerializer):
     """

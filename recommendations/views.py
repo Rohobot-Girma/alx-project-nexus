@@ -11,6 +11,7 @@ import logging
 
 from .models import Recommendation, UserInteraction
 from .serializers import RecommendationSerializer, UserInteractionSerializer
+from .algorithms import recommendation_engine
 from movies.models import Movie, UserFavorite
 from movies.services import TMDBService, MovieDataService
 
@@ -70,121 +71,56 @@ class PersonalizedRecommendationsView(APIView):
         return Response(response_data)
     
     def _generate_recommendations(self, user, limit):
-        """Generate recommendations based on user preferences."""
-        recommendations = []
-        
-        # Get user's favorite genres
-        user_genres = user.preferred_genres or []
-        
-        # Get user's favorite movies
-        user_favorites = UserFavorite.objects.filter(user=user).values_list('movie_id', flat=True)
-        
-        # Generate genre-based recommendations
-        if user_genres:
-            genre_recommendations = self._get_genre_based_recommendations(user_genres, limit//2)
-            recommendations.extend(genre_recommendations)
-        
-        # Generate similar recommendations
-        if user_favorites:
-            similar_recommendations = self._get_similar_recommendations(user_favorites, limit//2)
-            recommendations.extend(similar_recommendations)
-        
-        # Fill with popular movies if needed
-        if len(recommendations) < limit:
-            popular_recommendations = self._get_popular_recommendations(limit - len(recommendations))
-            recommendations.extend(popular_recommendations)
-        
-        return recommendations[:limit]
+        """Generate recommendations using the hybrid recommendation engine."""
+        try:
+            # Use the advanced recommendation engine
+            recommendations_data = recommendation_engine.get_recommendations(user, limit)
+            
+            # Convert to Recommendation objects
+            recommendations = []
+            for movie, score, reason in recommendations_data:
+                recommendation = Recommendation(
+                    user=user,
+                    movie=movie,
+                    recommendation_type='hybrid',
+                    score=score,
+                    reason=reason,
+                    metadata={'algorithm': 'hybrid_engine'}
+                )
+                recommendations.append(recommendation)
+            
+            return recommendations
+            
+        except Exception as e:
+            logger.error(f"Error generating recommendations: {e}")
+            # Fallback to simple recommendations
+            return self._get_fallback_recommendations(user, limit)
     
-    def _get_genre_based_recommendations(self, user_genres, limit):
-        """Get recommendations based on user's preferred genres."""
-        # Convert genre names to IDs (simplified approach)
-        genre_mapping = {
-            'Action': 28, 'Adventure': 12, 'Animation': 16, 'Comedy': 35,
-            'Crime': 80, 'Documentary': 99, 'Drama': 18, 'Family': 10751,
-            'Fantasy': 14, 'History': 36, 'Horror': 27, 'Music': 10402,
-            'Mystery': 9648, 'Romance': 10749, 'Science Fiction': 878,
-            'TV Movie': 10770, 'Thriller': 53, 'War': 10752, 'Western': 37
-        }
-        
-        genre_ids = [genre_mapping.get(genre, None) for genre in user_genres]
-        genre_ids = [gid for gid in genre_ids if gid is not None]
-        
-        if not genre_ids:
+    def _get_fallback_recommendations(self, user, limit):
+        """Fallback recommendations when advanced algorithms fail."""
+        try:
+            # Get popular movies as fallback
+            movies = Movie.objects.filter(
+                popularity__gt=10,
+                vote_average__gt=6.0
+            ).order_by('-popularity')[:limit]
+            
+            recommendations = []
+            for movie in movies:
+                recommendation = Recommendation(
+                    user=user,
+                    movie=movie,
+                    recommendation_type='popular',
+                    score=0.6,
+                    reason="Popular movies trending now"
+                )
+                recommendations.append(recommendation)
+            
+            return recommendations
+            
+        except Exception as e:
+            logger.error(f"Error in fallback recommendations: {e}")
             return []
-        
-        # Get movies with user's preferred genres
-        movies = Movie.objects.filter(
-            genre_ids__overlap=genre_ids
-        ).order_by('-popularity', '-vote_average')[:limit]
-        
-        # Create recommendation objects
-        recommendations = []
-        for movie in movies:
-            recommendation = Recommendation(
-                user=self.request.user,
-                movie=movie,
-                recommendation_type='genre_based',
-                score=0.8,
-                reason=f"Recommended based on your preference for {', '.join(user_genres)}"
-            )
-            recommendations.append(recommendation)
-        
-        return recommendations
-    
-    def _get_similar_recommendations(self, user_favorites, limit):
-        """Get recommendations similar to user's favorite movies."""
-        # Get movies with similar genres to user's favorites
-        favorite_movies = Movie.objects.filter(id__in=user_favorites)
-        all_genres = []
-        for movie in favorite_movies:
-            all_genres.extend(movie.genre_ids)
-        
-        # Get unique genres
-        unique_genres = list(set(all_genres))
-        
-        if not unique_genres:
-            return []
-        
-        # Get movies with similar genres
-        movies = Movie.objects.filter(
-            genre_ids__overlap=unique_genres
-        ).exclude(id__in=user_favorites).order_by('-popularity')[:limit]
-        
-        # Create recommendation objects
-        recommendations = []
-        for movie in movies:
-            recommendation = Recommendation(
-                user=self.request.user,
-                movie=movie,
-                recommendation_type='similar',
-                score=0.7,
-                reason="Recommended based on movies you liked"
-            )
-            recommendations.append(recommendation)
-        
-        return recommendations
-    
-    def _get_popular_recommendations(self, limit):
-        """Get popular movies as recommendations."""
-        movies = Movie.objects.filter(
-            popularity__gt=10,
-            vote_average__gt=6.0
-        ).order_by('-popularity')[:limit]
-        
-        # Create recommendation objects
-        recommendations = []
-        for movie in movies:
-            recommendation = Recommendation(
-                user=self.request.user,
-                movie=movie,
-                recommendation_type='popular',
-                score=0.6,
-                reason="Popular movies you might enjoy"
-            )
-            recommendations.append(recommendation)
-        
-        return recommendations
 
 
 class TrendingRecommendationsView(APIView):

@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from datetime import timedelta
 
 
 class User(AbstractUser):
@@ -20,6 +21,22 @@ class User(AbstractUser):
     preferred_genres = models.JSONField(default=list, blank=True)
     preferred_languages = models.JSONField(default=list, blank=True)
     preferred_countries = models.JSONField(default=list, blank=True)
+    
+    # User activity tracking
+    last_activity = models.DateTimeField(auto_now=True)
+    total_watch_time = models.DurationField(default=timedelta(0))
+    
+    # Privacy and notification settings
+    email_notifications = models.BooleanField(default=True)
+    privacy_level = models.CharField(
+        max_length=20,
+        choices=[
+            ('public', 'Public'),
+            ('friends', 'Friends Only'),
+            ('private', 'Private')
+        ],
+        default='private'
+    )
     
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
